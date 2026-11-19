@@ -1,5 +1,8 @@
 package com.example.hospital_manager.dto;
 
-public record LoginRequest() {
+import jakarta.validation.constraints.NotBlank;
 
+public record LoginRequest(
+        @NotBlank(message = "username is required") String username,
+        @NotBlank(message = "password is required") String password) {
 }
